@@ -1,0 +1,25 @@
+#stream ul{
+	margin: 10px;
+}
+
+#stream li{
+    background-color: #e0dede;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 1em;
+    display: flex;
+}
+
+#stream li:hover{
+    cursor: pointer;
+}
+
+#stream li div{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#stream li:hover div{
+    white-space: initial;
+}

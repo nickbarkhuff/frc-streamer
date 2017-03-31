@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+ul, ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

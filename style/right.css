@@ -1,0 +1,21 @@
+#right li{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#right li:hover{
+    white-space: normal;
+}
+
+#matches ul{
+    text-align: center;
+}
+
+.watching{
+    font-weight: bold;
+}
+
+#links a, #links a:hover{
+    font-weight: bold;
+}

@@ -1,0 +1,59 @@
+body{
+    font-family: "Droid Sans";
+}
+
+a:hover{
+    font-style: italic;
+}
+
+#app{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content{
+    flex: 1;
+    width: 90%;
+    padding: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.sidebar{
+    width: 15%;
+}
+
+#center{
+    flex-grow: 1;
+}
+
+#stream{
+    height: 70%;
+}
+
+#stream iframe{
+    height: 100%;
+    width: 100%;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+#bottom{
+    height: calc(30% - 10px);
+}
+
+.bubble{
+    border-radius: 1em;
+    padding: 20px;
+    margin: 5px;
+}
+
+#footer{
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+}

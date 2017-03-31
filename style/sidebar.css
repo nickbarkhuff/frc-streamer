@@ -1,0 +1,17 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+
+#leaderboard, #matches{
+    overflow-x: auto;
+    flex-grow: 1;
+}
+
+.sidebar li{
+    margin-bottom: 15px;
+}
+
+.top-header{
+    margin-top: 0;
+}

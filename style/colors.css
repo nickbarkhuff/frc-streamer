@@ -1,0 +1,40 @@
+body{
+    background-color: #151515;
+}
+
+#content{
+    background-color: #AEAEAE;
+}
+
+.bubble{
+    background-color: #DADADA;
+}
+
+#footer{
+    background-color: #2A2A2A;
+    color: white;
+}
+
+#footer i:hover{
+    color: red;
+}
+
+.red{
+    color: #AB0000;
+}
+
+.blue{
+    color: #000087;
+}
+
+.watching{
+    color: #9200B7;
+}
+
+#links a, #links a:hover{
+    color: #5D5D5D;
+}
+
+.active{
+    color: #B40000;
+}
