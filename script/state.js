@@ -86,16 +86,14 @@ var state = new Vue({
                 // Blue teams
                 x.blue = [];
                 for(var i=0;i<3;i++){
-                    var str = "0000" + x.alliances.blue.teams[i].substring(3);
-                    str = str.substring(str.length - 4, str.length);
+                    var str = x.alliances.blue.teams[i].substring(3);
                     x.blue.push(str);
                 }
 
                 // Red teams
                 x.red = [];
                 for(var i=0;i<3;i++){
-                    var str = "0000" + x.alliances.red.teams[i].substring(3);
-                    str = str.substring(str.length - 4, str.length);
+                    var str = x.alliances.red.teams[i].substring(3);
                     x.red.push(str);
                 }
             });
@@ -128,6 +126,23 @@ var state = new Vue({
                     return this.rankings[i].place;
             }
             return 0;
+        },
+
+
+        // Watches team matches
+        watched_matches: function(){
+
+            var that = this;
+
+            return this.matches
+                
+            // Filter out matches the watched team is not in 
+            .filter(function(x){
+                return x.red.includes(that.watched_team) || x.blue.includes(that.watched_team);
+            })
+
+            // Get the first 3 matches
+            .slice(0,3);
         }
 
 
@@ -234,7 +249,7 @@ var state = new Vue({
 
         // Is watched team
         is_watched_team: function(team){
-            return this.watched_team == parseInt(team);
+            return this.watched_team == team;
         },
 
 
@@ -272,6 +287,13 @@ var state = new Vue({
 
             if(hours > 0) return hours + "h " + minutes + "m";
             else          return minutes + "m";
+        },
+
+
+        // Left pad zeros
+        pad_zeros: function(x){
+            var str = "0000" + x;
+            return str.substring(str.length - 4, str.length);
         }
 
 

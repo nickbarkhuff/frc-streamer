@@ -83,6 +83,13 @@ $footer = "Copyright &copy; " . date("Y") . " Nick Barkhuff. All Rights Reserved
                         <div v-else>
                             Stats will be displayed when they are available.
                         </div>
+                        <br>
+                        <div><strong>Upcoming Matches: </strong></div>
+                        <ul>
+                            <li v-for="match in watched_matches">
+                                {{ match.comp_level | uppercase }}{{ match.match_number }} at {{ match.time | time }} ({{ match.time | time_until }})
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -137,9 +144,9 @@ $footer = "Copyright &copy; " . date("Y") . " Nick Barkhuff. All Rights Reserved
                                     ({{ match.time | time_until }}) <br>
                                 </strong>
                                 <div v-for="n in 3">
-                                    <span class="red" :class="{watching: is_watched_team(match.red[n-1])}">{{match.red[n-1]}}</span>
+                                    <span class="red" :class="{watching: is_watched_team(match.red[n-1])}">{{match.red[n-1] | pad_zeros}}</span>
                                     &nbsp;-&nbsp;
-                                    <span class="blue" :class="{watching: is_watched_team(match.blue[n-1])}">{{match.blue[n-1]}}</span>
+                                    <span class="blue" :class="{watching: is_watched_team(match.blue[n-1])}">{{match.blue[n-1] | pad_zeros}}</span>
                                 </div>
                             </li>
                         </ul>
