@@ -54,7 +54,7 @@ $footer = "Copyright &copy; " . date("Y") . " Nick Barkhuff. All Rights Reserved
                 <div id="leaderboard">
                     <ul v-if="rankings.length">
                         <li v-for="team in rankings" style="display:flex">
-                            <span style="flex:1" :class="{watching: is_watched_team(team.team_number)}">{{team.place|ordinal}} - {{team.number}}</span>
+                            <span style="flex:1" :class="{watching: is_watched_team(team.number)}">{{team.place|ordinal}} - {{team.number|pad_zeros}}</span>
                         </li>
                     </ul>
                     <ul v-else>
