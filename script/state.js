@@ -277,16 +277,14 @@ var state = new Vue({
         // Given a Unix time, return the amount of time left until
         // then in this format: "<hours>h <minutes>m"
         time_until: function(x){
-            var seconds = x - utime("", false);
-            var minutes = seconds / 60;
-            var hours   = minutes / 60;
-
-            minutes %= 60;
-            minutes = Math.ceil(minutes);
-            hours = Math.floor(hours);
-
-            if(hours > 0) return hours + "h " + minutes + "m";
-            else          return minutes + "m";
+            var seconds       = x - utime("", false);
+            var minutes_total = Math.ceil(seconds / 60);
+            var minutes       = minutes_total % 60;
+            var hours         = (minutes_total - minutes) / 60;
+            if      (hours <=0 && minutes <= 0) return "Now!";
+            else if (hours <= 0 && minutes > 0) return minutes + "m"; 
+            else if (hours > 0 && minutes <= 0) return hours + "h";
+            else                                return hours + "h " + minutes + "m";
         },
 
 
